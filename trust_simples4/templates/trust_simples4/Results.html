@@ -1,0 +1,102 @@
+{% extends "global/Page.html" %}
+{% load otree %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+
+{% if player.id_in_group == 1 %}
+
+    {% if group.sent_amount_1 == 0 %}
+    <p>
+        You sent Participant B {{10}}.
+        Participant B returned {{0}}.
+    </p>
+        
+    {% elif group.sent_amount_1 == 1 %}
+    <p>
+        You sent Participant B {{ group.sent_amount_1 }}.
+        Participant B returned {{group.sent_amount_2_1}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 2 %}
+    <p>
+        You sent Participant B {{ group.sent_amount_1 }}.
+        Participant B returned {{group.sent_amount_2_2}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 3 %}
+    <p>
+        You sent Participant B {{ group.sent_amount_1 }}.
+        Participant B returned {{group.sent_amount_2_3}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 4 %}
+    <p>
+        You sent Participant B {{ group.sent_amount_1 }}.
+        Participant B returned {{group.sent_amount_2_4}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 5 %}
+    <p>
+        You sent Participant B {{ group.sent_amount_1 }}.
+        Participant B returned {{group.sent_amount_2_5}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 6 %}
+    <p>
+        You sent Participant B {{ group.sent_amount_1 }}.
+        Participant B returned {{group.sent_amount_2_6}}.
+    </p>
+    {% endif %}
+
+{% elif player.id_in_group == 2 %}
+
+    {% if group.sent_amount_1 == 1 %}
+    <p>
+        Participant A sent you {{ group.sent_amount_1 }}.
+        You returned {{group.sent_amount_2_1}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 2 %}
+    <p>
+        Participant A sent you {{ group.sent_amount_1 }}.
+        You returned {{group.sent_amount_2_2}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 3 %}
+    <p>
+        Participant A sent you {{ group.sent_amount_1 }}.
+        You returned {{group.sent_amount_2_3}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 4 %}
+    <p>
+        Participant A sent you {{ group.sent_amount_1 }}.
+        You returned {{group.sent_amount_2_4}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 5 %}
+    <p>
+        Participant A sent you {{ group.sent_amount_1 }}.
+        You returned {{group.sent_amount_2_5}}.
+    </p>
+
+    {% elif group.sent_amount_1 == 6 %}
+    <p>
+        Participant A sent you {{ group.sent_amount_1 }}.
+        You returned {{group.sent_amount_2_6}}.
+    </p>
+    {% endif %}
+    
+{% endif %}
+    
+    <p>
+    Therefore, your total payoff is {{player.payoff}}.
+    </p>
+
+    {% include Constants.instructions_template %}
+
+{% endblock %}
